@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Saint Valentin ❤️</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+        #yes {
+            background-color: #ff4d6d;
+            color: white;
+            margin-right: 20px;
+        }
+
+        #no {
+            background-color: white;
+            color: #ff4d6d;
+            position: absolute;
+        }
+
+        #loveMessage {
+            display: none;
+            color: white;
+            font-size: 1.4em;
+            margin-top: 30px;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Veux-tu être ma Valentine ? 💖</h1>
+
+    <button id="yes">Oui</button>
+    <button id="no">Non</button>
+
+    <p id="loveMessage">
+        💖✨<br><br>
+        YESSSS !<br><br>
+        Tu viens de rendre mon cœur encore plus heureux.<br>
+        Merci d’être toi, avec ton sourire, ta douceur<br>
+        et tous ces petits moments qui me font t’aimer chaque jour un peu plus.<br><br>
+        J’ai hâte de créer encore mille souvenirs avec toi 💕💫
+    </p>
+</div>
+
+<script>
+    const noButton = document.getElementById("no");
+    const yesButton = document.getElementById("yes");
+    const message = document.getElementById("loveMessage");
+
+    // Le bouton NON fuit la souris
+    noButton.addEventListener("mouseover", () => {
+        const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+        const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+
+        noButton.style.left = x + "px";
+        noButton.style.top = y + "px";
+    });
+
+    // Quand elle clique sur OUI 💘
+    yesButton.addEventListener("click", () => {
+        message.style.display = "block";
+        yesButton.style.display = "none";
+        noButton.style.display = "none";
+    });
+</script>
+
+</body>
+</html>
